@@ -11,13 +11,14 @@ bool in(int x,int y){
 
 bool dfs(int x,int y){
     
-    
+    /*找到终点后退出*/
     if(maze[x][y] == 'T'){
         return true;
     }
     vis[x][y]=1;
     maze[x][y]='m';
     
+	/*尝试上下左右方向*/
     int tx = x-1,ty=y;
     if(in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty]){
         if(dfs(tx,ty)){
@@ -46,6 +47,7 @@ bool dfs(int x,int y){
         }
     }
     
+	/*回溯*/
     vis[x][y] = 0;
     maze[x][y] = '.';
     return false;
