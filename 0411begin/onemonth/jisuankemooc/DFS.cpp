@@ -4,6 +4,9 @@ using namespace std;
 int n, m;
 string maze[110];
 bool vis[110][110];
+//--------------优化----------------
+int dir[4][2] = {{-1,0},{0,-1},{1,0},{0,1}};
+
 
 bool in(int x,int y){
 	return 0 <= x && x < n && 0 <= y && y < m;
@@ -18,7 +21,8 @@ bool dfs(int x,int y){
     vis[x][y]=1;
     maze[x][y]='m';
     
-	/*尝试上下左右方向*/
+	/*
+    //尝试上下左右方向
     int tx = x-1,ty=y;
     if(in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty]){
         if(dfs(tx,ty)){
@@ -44,6 +48,16 @@ bool dfs(int x,int y){
     if(in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty]){
         if(dfs(tx,ty)){
             return true;
+        }
+    }*/
+	
+   for(int i=0;i<4;i++){
+        int tx = x+dir[i][0];
+        int ty = y+dir[i][1];
+        if(in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty]){
+            if(dfs(tx,ty)){
+                return true;
+            }
         }
     }
     
