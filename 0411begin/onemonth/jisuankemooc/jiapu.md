@@ -1,1 +1,1 @@
-![image](https://github.com/STUFelix/Felix_Algorith/blob/master/image/jiapu.jpg)
+![image](https://github.com/STUFelix/Felix_Algorithm/blob/master/image/jiapu.jpg)
