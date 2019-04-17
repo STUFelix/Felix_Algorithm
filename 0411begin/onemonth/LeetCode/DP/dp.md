@@ -1,4 +1,6 @@
+```java  
 /*
+经典dp：爬楼梯
 不难发现，这个问题可以被分解为一些包含最优子结构的子问题，即它的最优解可以从其子问题的最优解来有效地构建，我们可以使用动态规划来解决这一问题。
 
 第 i 阶可以由以下两种方法得到：
@@ -14,7 +16,6 @@
 dp[i]=dp[i-1]+dp[i-2]
 dp[i]=dp[i−1]+dp[i−2]
 */
-```java  
 public class Solution {
     public int climbStairs(int n) {
         if (n == 1) {
