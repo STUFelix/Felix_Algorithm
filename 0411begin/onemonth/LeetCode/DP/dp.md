@@ -33,3 +33,8 @@ public class Solution {
 ```
 
 
+
+优化原则：最优子结构性质
+优化函数的特点：任何最短路的子路径相对于子问题始、终点最短
+不满足优化原则，不能用动态规划
+[动态规划反例](https://github.com/STUFelix/Felix_Algorithm/blob/master/image/%E6%9C%80%E4%BC%98%E5%8C%96%E5%8E%9F%E5%88%99.jpg)
