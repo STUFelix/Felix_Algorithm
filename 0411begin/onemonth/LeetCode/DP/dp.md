@@ -30,6 +30,19 @@ public class Solution {
         return dp[n];
     }
 }
+
+
+爬楼梯： 时间复杂度 O(log(n))
+空间复杂度O(1)的算法
+Fibonacci Formula
+
+public class Solution {
+    public int climbStairs(int n) {
+        double sqrt5=Math.sqrt(5);
+        double fibn=Math.pow((1+sqrt5)/2,n+1)-Math.pow((1-sqrt5)/2,n+1);
+        return (int)(fibn/sqrt5);
+    }
+}
 ```
 
 
