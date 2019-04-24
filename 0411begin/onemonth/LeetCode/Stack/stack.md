@@ -83,3 +83,40 @@ public class Main {
 }
 
 ```
+
+
+```java
+class Solution {
+    double sum=0;
+    public double myPow(double x, int n) {
+        if(n == 0){
+            return 1;
+        }
+        if( n > 0){
+            sum = x*myPow(x,n-1);
+        }else{
+            sum = (1/x)*myPow(x,n+1);
+        }
+        return sum;
+    }
+}
+/*to deal with the stackOverflow question*/
+O (logn) solution in Java
+public class Solution {
+        public double pow(double x, int m) {
+            double temp=x;
+            if(m==0)
+            return 1;
+            temp=pow(x,m/2);
+            if(m%2==0)
+            return temp*temp;
+            else 
+            {
+            if(m > 0)
+                return x*temp*temp;
+            else
+                return (temp*temp)/x;
+            }
+          
+    }
+```
