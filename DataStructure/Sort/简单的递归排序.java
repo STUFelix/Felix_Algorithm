@@ -25,11 +25,11 @@ public class Main {
 			List<Integer> smaller = new ArrayList<Integer>();
 			List<Integer> same = new ArrayList<Integer>();
 			List<Integer> larger = new ArrayList<Integer>();
-			Integer pivot = items.get(items.size()/2);
+			Integer chosenItem = items.get(items.size()/2);
 			for (Integer i : items) {
-				if(i<pivot) {
+				if(i<chosenItem) {
 					smaller.add(i);
-				}else if(i>pivot){
+				}else if(i>chosenItem){
 					larger.add(i);
 				}else {
 					same.add(i);
