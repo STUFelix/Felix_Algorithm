@@ -18,9 +18,7 @@ bool is_prime(int n){
     }
     return n != 1;
 }
-```
 
-```cpp
 //埃氏筛法 时间复杂度O(nloglogn)
 int prime[MAX_N];
 bool is_prime[MAX_N + 1];
