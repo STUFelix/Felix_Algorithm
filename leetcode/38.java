@@ -8,11 +8,6 @@ The count-and-say sequence is the sequence of integers with the first five terms
 */
 
 
-
-package leetcode;
-
-import java.util.*;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -53,7 +48,30 @@ Exception in thread "main" java.lang.StringIndexOutOfBoundsException: index 0,le
 	at leetcode.Main.main(Main.java:8)
 */
 
-/*
-  很是奇怪，为什么在leetcode上过得了，在eclipse上却报空指针异常错误。
-*/
+//正解：
+class Solution {
+    public String countAndSay(int n) {
+       StringBuilder curr=new StringBuilder("1");
+	    	StringBuilder prev;
+	    	int count;
+	    	char say;
+	        for (int i=1;i<n;i++){
+	        	prev=curr;
+	 	        curr=new StringBuilder();       
+	 	        count=1;
+	 	        say=prev.charAt(0);
+	 	        
+	 	        for (int j=1,len=prev.length();j<len;j++){
+	 	        	if (prev.charAt(j)!=say){
+	 	        		curr.append(count).append(say);
+	 	        		count=1;
+	 	        		say=prev.charAt(j);
+	 	        	}
+	 	        	else count++;
+	 	        }
+	 	        curr.append(count).append(say);
+	        }	       	        
+	        return curr.toString();
+    }
+}
 
